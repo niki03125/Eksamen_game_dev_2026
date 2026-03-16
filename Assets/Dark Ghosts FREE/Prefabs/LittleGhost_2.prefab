@@ -233,6 +233,8 @@ GameObject:
   - component: {fileID: 3154600866040741233}
   - component: {fileID: 649512763112729173}
   - component: {fileID: 2305990681805346777}
+  - component: {fileID: -5959945321142075284}
+  - component: {fileID: -8065668186526463821}
   m_Layer: 0
   m_Name: LittleGhost_2
   m_TagString: Untagged
@@ -364,6 +366,34 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-5959945321142075284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383674549258538840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935f710499e1f41129472c45f9305329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GhostChase
+  player: {fileID: 5401481346093795583, guid: 8cf885dce336842fdb1753a8f4cb4171, type: 3}
+  chaseDistance: 10
+--- !u!114 &-8065668186526463821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383674549258538840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95394199b19847caa0954e671ad0a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GhostNPC
+  roamRadius: 20
+  roamTimer: 5
 --- !u!1 &1774589566568768201
 GameObject:
   m_ObjectHideFlags: 0
