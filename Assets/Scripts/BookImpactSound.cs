@@ -3,6 +3,7 @@ using UnityEngine;
 public class BookImpactSound : MonoBehaviour
 {
     private AudioSource audioSource;
+    public ParticleSystem dustEffect;
     private bool hasPlayed = false;
 
     void Start()
@@ -16,6 +17,11 @@ public class BookImpactSound : MonoBehaviour
         {
             hasPlayed = true;
             audioSource.Play();
+            
+            if (dustEffect != null)
+            {
+                dustEffect.Play();
+            }
         }
     }
 }
