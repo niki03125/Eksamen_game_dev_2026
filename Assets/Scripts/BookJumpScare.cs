@@ -18,11 +18,7 @@ public class BookJumpScare : MonoBehaviour
         {
             triggered = true;
             bookRb.isKinematic = false;
-
-            if (bookSound != null)
-            {
-                bookSound.Play();
-            }
+            
         }
     }
 }
