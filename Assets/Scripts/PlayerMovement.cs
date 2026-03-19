@@ -4,10 +4,10 @@ public class PlayerMovement : MonoBehaviour
 {
     
     [SerializeField] private Transform cameraTransform;
-    float speed = 3f;
+    [SerializeField]float speed = 3f;
     //float jumpForce = 1.5f;
-    float gravity = -9.81f;
-    float mouseSpeed = 90f;
+    [SerializeField]float gravity = -9.81f;
+    [SerializeField]float mouseSpeed = 90f;
     
     // Stored seperatley so vertical look can be clamped.
     float xRotation = 0f;

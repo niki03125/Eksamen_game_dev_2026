@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - libraryFloor
+  - Ghost
   layers:
   - Default
   - TransparentFX
