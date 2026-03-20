@@ -4,13 +4,14 @@ using UnityEngine;
 public class SpecialBook : MonoBehaviour
 {
     [SerializeField] private GameObject importantEffectObject;
-    [SerializeField] private GameObject Ghost;
+    private GameObject ghost;
     
     private bool bookOnFloor = false;
     private bool playerNearby = false;
 
     private void Start()
     {
+        ghost = GameObject.Find("Ghost");
         if (importantEffectObject != null)
         {
             importantEffectObject.SetActive(false);
@@ -19,11 +20,11 @@ public class SpecialBook : MonoBehaviour
 
     private void Update()
     {
-        if (bookOnFloor && Input.GetKeyDown(KeyCode.R))
+        if (bookOnFloor && playerNearby && Input.GetKeyDown(KeyCode.R))
         {
-            if (Ghost != null)
+            if (ghost != null)
             {
-                Destroy(Ghost);
+                Destroy(ghost);
             }
             Destroy(gameObject);
         }
