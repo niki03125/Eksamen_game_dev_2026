@@ -6,8 +6,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject supportMenu;
     public float mouseSensitivity = 1f;
-
-    private bool isPaused = false;
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +21,7 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(isPaused)
+            if(PlayerMovement.isPaused)
             {
                 Resume();
             }
@@ -40,7 +39,10 @@ public class PauseMenu : MonoBehaviour
         supportMenu.SetActive(false);
         
         Time.timeScale = 1f;
-        isPaused = false;
+        PlayerMovement.isPaused = false;
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Pause()
@@ -50,7 +52,10 @@ public class PauseMenu : MonoBehaviour
         supportMenu.SetActive(false);
         
         Time.timeScale = 0f;
-        isPaused = true;
+        PlayerMovement.isPaused = true;
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     
     public void QuitGame()
