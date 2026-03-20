@@ -4,7 +4,7 @@ using UnityEngine;
 public class SpecialBook : MonoBehaviour
 {
     [SerializeField] private GameObject importantEffectObject;
-    [SerializeField] private GameObject ghost;
+    [SerializeField] private GameObject Ghost;
     
     private bool bookOnFloor = false;
     private bool playerNearby = false;
@@ -21,9 +21,9 @@ public class SpecialBook : MonoBehaviour
     {
         if (bookOnFloor && Input.GetKeyDown(KeyCode.R))
         {
-            if (ghost != null)
+            if (Ghost != null)
             {
-                Destroy(ghost);
+                Destroy(Ghost);
             }
             Destroy(gameObject);
         }
