@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float maxHealth = 100f;
+   [SerializeField] public float maxHealth = 100f;
     public float currentHealth;
     
     public Slider healthBar;
@@ -35,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player has died!");
+        Destroy(gameObject);
         // Implement death behavior (e.g., respawn, game over screen)
         
     }

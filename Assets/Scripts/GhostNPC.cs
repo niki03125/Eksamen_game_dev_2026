@@ -3,53 +3,78 @@ using UnityEngine.AI;
 
 public class GhostNPC : MonoBehaviour
 {
-
     public Transform player;
     public float chaseDistance = 15f;
+    
+    [SerializeField] public float dmgDistance = 2f; // Distancen hvor spøgelset kan røre dig
+    [SerializeField] public float damageAmount = 10f;
+    [SerializeField] public float attackSpeed = 1.5f; // Hvor mange sekunder der går mellem hvert slag
     
     public float roamRadius = 20f;
     public float roamTimer = 5f;
 
     private float timer;
+    private float attackTimer; // Holder styr på cooldown
     private NavMeshAgent agent;
     private Animator animator;
+    private PlayerHealth playerHealth; // Reference til spillerens liv
     
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         timer = roamTimer;
+
+        // Find PlayerHealth scriptet på spilleren
+        if (player != null)
+        {
+            playerHealth = player.GetComponent<PlayerHealth>();
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (player == null) return;
+        if (player == null || playerHealth == null) return;
 
-        Vector3 ghostPos = transform.position; ghostPos.y = 0;
-        Vector3 playerPos = player.position; playerPos.y = 0;
-        float distance = Vector3.Distance(ghostPos, playerPos);
+        float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance < chaseDistance)
         {
             agent.SetDestination(player.position);
-            if (animator != null)
-                animator.SetBool("isChasing", true);
+            
+            if (animator != null) animator.SetBool("isChasing", true);
+            
+            if (distance <= dmgDistance)
+            {
+                attackTimer += Time.deltaTime;
+                if (attackTimer >= attackSpeed)
+                {
+                    AttackPlayer();
+                    attackTimer = 0f; // Reset cooldown
+                }
+            }
         }
         else
         {
+            // Roaming logik
             timer += Time.deltaTime;
             if(timer >= roamTimer)
             {
-                Vector3 newPos = RandomNavSphere(transform.position, roamRadius);
-                agent.SetDestination(newPos);
+                agent.SetDestination(RandomNavSphere(transform.position, roamRadius));
                 timer = 0f;
             }
             
-            if(animator != null)
-                animator.SetBool("isChasing", false);
+            if(animator != null) animator.SetBool("isChasing", false);
+        }
+    }
+
+    void AttackPlayer()
+    {
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damageAmount);
+            Debug.Log("Ghost angreb spilleren!");
+            
         }
     }
 
