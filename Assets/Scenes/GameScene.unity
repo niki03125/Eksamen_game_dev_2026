@@ -709,6 +709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map v4.0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859480354910709214, guid: f309092f30c644f7695525d7a855e553, type: 3}
+      propertyPath: winTextObject
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6035826980488048879, guid: f309092f30c644f7695525d7a855e553, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.1034207
