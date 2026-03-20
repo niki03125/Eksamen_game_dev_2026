@@ -11,7 +11,7 @@ public class SpecialBook : MonoBehaviour
 
     private void Start()
     {
-        ghost = GameObject.Find("Ghost");
+        ghost = GameObject.FindWithTag("Ghost");
         if (importantEffectObject != null)
         {
             importantEffectObject.SetActive(false);
