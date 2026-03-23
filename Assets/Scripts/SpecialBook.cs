@@ -8,9 +8,11 @@ public class SpecialBook : MonoBehaviour
     
     private bool bookOnFloor = false;
     private bool playerNearby = false;
+    public GameObject winTextObject;
 
     private void Start()
     {
+        winTextObject.SetActive(false);
         ghost = GameObject.FindWithTag("Ghost");
         if (importantEffectObject != null)
         {
@@ -25,6 +27,7 @@ public class SpecialBook : MonoBehaviour
             if (ghost != null)
             {
                 Destroy(ghost);
+                winTextObject.SetActive(true);
             }
             Destroy(gameObject);
         }

@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     
     CharacterController controller;
     
+    public static bool isPaused = false;
+    
     void Start()
     {
         
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        if (isPaused) return;
+        
         Move();
         Look();
     }
