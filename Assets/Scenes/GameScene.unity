@@ -187,6 +187,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3053013, y: 2.366319, z: 0.1337069}
   m_Center: {x: 0.6274186, y: 0, z: -0.0026556775}
+--- !u!1001 &511349396
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 124.40449
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 284.62653
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924911019873488554, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074646810492940091, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
+      propertyPath: m_Name
+      value: BackgroundMusic
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa90b3b6e17dc6746a5a196d4fcf03be, type: 3}
 --- !u!1001 &787705100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -797,6 +854,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4025874533955559993, guid: 7c0da6656e89b48f68ae448b75a84039, type: 3}
+      propertyPath: m_text
+      value: You Win!!
+      objectReference: {fileID: 0}
     - target: {fileID: 6753761285758294754, guid: 7c0da6656e89b48f68ae448b75a84039, type: 3}
       propertyPath: m_Name
       value: WinScreen
@@ -1208,3 +1269,4 @@ SceneRoots:
   - {fileID: 821006045333576094}
   - {fileID: 787705100}
   - {fileID: 1124919309}
+  - {fileID: 511349396}
